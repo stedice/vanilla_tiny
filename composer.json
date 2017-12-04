@@ -1,0 +1,21 @@
+{
+    "name": "panique/tiny",
+    "type": "project",
+    "description": "A tiny PHP boilerplate",
+    "keywords": ["skeleton", "boilerplate", "naked", "barebone", "application"],
+    "homepage": "https://github.com/panique/tiny",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Panique",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/panique/tiny/issues",
+        "source": "https://github.com/panique/tiny"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    }
+}
