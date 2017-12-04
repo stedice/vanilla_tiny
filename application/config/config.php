@@ -49,6 +49,7 @@ if (defined('URL_SUB_FOLDER')) {
  */
 define('DB_TYPE', 'mysql');
 define('DB_HOST', '127.0.0.1');
+define('DB_PORT', '3306');
 define('DB_NAME', 'tiny');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
