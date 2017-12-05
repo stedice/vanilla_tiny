@@ -21,6 +21,7 @@ if (!$this) {
     <!-- See more here: http://stackoverflow.com/q/2105327/1114320 -->
 
     <!-- CSS -->
+    <link href="<?php echo URL; ?>public/css/normalize.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
 </head>
 <body>

@@ -27,3 +27,61 @@ table {
     padding: 10px 15px;
     display: inline-block;
 }
+
+.icon {
+  background-image: url('../img/Elements.png');
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-people {
+  background-position: -108px -345px;
+}
+
+.icon-star1 {
+  background-position: -175px -345px;
+}
+
+.icon-plus {
+  background-position: -237px -345px;
+}
+
+.icon-times {
+  background-position: -390px -345px;
+}
+
+.icon-upload {
+  background-position: -460px -345px;
+}
+
+.icon-check {
+  background-position: -527px -345px;
+}
+
+.icon-phone {
+  background-position: -108px -462px;
+}
+
+.icon-pencil {
+  background-position: -175px -462px;
+}
+
+.icon-mail {
+  background-position: -237px -462px;
+}
+
+.icon-star2 {
+  background-position: -390px -458px;
+}
+
+.icon-star3 {
+  background-position: -460px -458px;
+}
+
+.icon-right {
+  background-position: -527px -458px;
+}
+
+
+
