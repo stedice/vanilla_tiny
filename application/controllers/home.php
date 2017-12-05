@@ -22,29 +22,4 @@ class Home extends Controller
         require APP . 'views/_templates/footer.php';
     }
 
-    /**
-     * PAGE: exampleone
-     * This method handles what happens when you move to http://yourproject/home/exampleone
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function exampleOne()
-    {
-        // load views
-        require APP . 'views/_templates/header.php';
-        require APP . 'views/home/example_one.php';
-        require APP . 'views/_templates/footer.php';
-    }
-
-    /**
-     * PAGE: exampletwo
-     * This method handles what happens when you move to http://yourproject/home/exampletwo
-     * The camelCase writing is just for better readability. The method name is case-insensitive.
-     */
-    public function exampleTwo()
-    {
-        // load views
-        require APP . 'views/_templates/header.php';
-        require APP . 'views/home/example_two.php';
-        require APP . 'views/_templates/footer.php';
-    }
 }
