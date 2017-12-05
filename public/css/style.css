@@ -78,7 +78,7 @@ li.list-item{
   color: #666;
   padding: 6px;
   height: 30px;
-  vertical-align: bottom;
+  vertical-align: middle;
 }    
 
 li.list-item:nth-child(odd) {
@@ -198,19 +198,56 @@ input[type=text].search {
 }
 
 /* detail page style */
-.details {
+table.details {
   padding: 20px;
+  border-collapse: collapse;
 }
 
-span.detail-name {
+
+tr.hr {
+  border-bottom: 1px solid #666;
+}
+
+
+th {
   color: #999;
+  font-weight: normal;
   text-align: right;
-  width: 100px;
+  vertical-align: text-bottom;
+  padding: 15px 0px 15px 40px;
 }
 
-span.detail-value {
+td {
   color: #666;
+  vertical-align: text-bottom;
   font-size: 30px;
-  margin-left: 40px;
+  padding: 15px 0px 15px 20px;
 }
+
+td.clear { 
+  color:#999; 
+}
+
+td.name {
+  vertical-align: middle;
+}
+
+/* photo */
+.circle-sm {
+  background: #C6EBF0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.circle {
+  background: #C6EBF0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
 

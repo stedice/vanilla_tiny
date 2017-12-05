@@ -1,18 +1,18 @@
 <div id="list">
 	<input type="text" class="search" name="search" placeholder="Search..">
   <ul>
-  	<li class="list-item">uno</li>
-  	<li class="list-item">due</li>
-  	<li class="list-item">tre</li>
-  	<li class="list-item">quattro</li>
-  	<li class="list-item">cinque</li>
-  	<li class="list-item">sei</li>
-    <li class="list-item">uno</li>
-    <li class="list-item">due</li>
-    <li class="list-item">tre</li>
-    <li class="list-item">quattro</li>
-    <li class="list-item">cinque</li>
-    <li class="list-item">sei</li> 
+  	<li class="list-item"><span class="circle-sm"></span>uno</li>
+  	<li class="list-item"><span class="circle-sm"></span>due</li>
+  	<li class="list-item"><span class="circle-sm"></span>tre</li>
+  	<li class="list-item"><span class="circle-sm"></span>quattro</li>
+  	<li class="list-item"><span class="circle-sm"></span>cinque</li>
+  	<li class="list-item"><span class="circle-sm"></span>sei</li>
+    <li class="list-item"><span class="circle-sm"></span>uno</li>
+    <li class="list-item"><span class="circle-sm"></span>due</li>
+    <li class="list-item"><span class="circle-sm"></span>tre</li>
+    <li class="list-item"><span class="circle-sm"></span>quattro</li>
+    <li class="list-item"><span class="circle-sm"></span>cinque</li>
+    <li class="list-item"><span class="circle-sm"></span>sei</li> 
   </ul>
   <br/><br/><br/><br/><br/>
    <div class="menubar">

@@ -1,16 +1,21 @@
 <div id="details">
-    <div class="details">
-      <span class="detail-name">IMG</span><span class="detail-value">Nome Cognome</span><br/>
-      <span class="detail-name">work</span><span class="detail-value">+1 (123) 456-7890</span><br/>
-      <span class="detail-name">mobile</span><span class="detail-value">+1 (06) 456-7890</span>
-      <hr/>
-      <span class="detail-name">work</span><span class="detail-value">foo@bar.com</span><br/>
-      <span class="detail-name">private</span><span class="detail-value"> bar@foo.com</span>
-      <hr/>
-      <span class="detail-name">home</span><span class="detail-value" style="color:#999;">1 Infinite Loop<br/>Cupertino CA 95014<br/>United States</span>
-      <hr/>
-      <span class="detail-name">note</span><span class="detail-value" style="color:#999;">this is a note</span>
-  </div>
+    <table class="details">
+      <tr>
+      <th><div class="circle"></div></th><td class="name">Nome Cognome</td>
+      </tr><tr>
+      <th>work</th><td>+1 (123) 456-7890</td>
+      </tr><tr class="hr">
+      <th>mobile</th><td>+1 (06) 456-7890</td>
+      </tr><tr>
+      <th>work</th><td>foo@bar.com</td>
+      </tr><tr class="hr">
+      <th>private</th><td> bar@foo.com</td>
+      </tr><tr class="hr">
+      <th>home</th><td class="clear">1 Infinite Loop<br/>Cupertino CA 95014<br/>United States</td>
+      </tr><tr>
+      <th>note</th><td class="clear">this is a note</td>
+  	</tr>
+  </table>
   <br/><br/><br/><br/><br/>
 
    <div class="menubar">
