@@ -17,9 +17,9 @@ class Model
     /**
      * Get all songs from database
      */
-    public function getAllSongs()
+    public function getAllContacts()
     {
-        $sql = "SELECT id, artist, track, link FROM song";
+        $sql = "SELECT * FROM contact";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -41,11 +41,11 @@ class Model
      * @param string $track Track
      * @param string $link Link
      */
-    public function addSong($artist, $track, $link)
+    public function addContact($firstname, $lastname)
     {
-        $sql = "INSERT INTO song (artist, track, link) VALUES (:artist, :track, :link)";
+        $sql = "INSERT INTO contact (firstname, lastname) VALUES (:firstname, :lastname)";
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link);
+        $parameters = array(':firstname' => $firstname, ':lastname' => $lastname);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -54,16 +54,16 @@ class Model
     }
 
     /**
-     * Delete a song in the database
+     * Delete a contact in the database
      * Please note: this is just an example! In a real application you would not simply let everybody
      * add/update/delete stuff!
-     * @param int $song_id Id of song
+     * @param int $contact_id Id of contact
      */
-    public function deleteSong($song_id)
+    public function deleteContact($contact_id)
     {
-        $sql = "DELETE FROM song WHERE id = :song_id";
+        $sql = "DELETE FROM contact WHERE id = :contact_id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':contact_id' => $contact_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -74,11 +74,11 @@ class Model
     /**
      * Get a song from database
      */
-    public function getSong($song_id)
+    public function getContact($contact_id)
     {
-        $sql = "SELECT id, artist, track, link FROM song WHERE id = :song_id LIMIT 1";
+        $sql = "SELECT * FROM contact WHERE id = :contact_id LIMIT 1";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':contact_id' => $contact_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -101,11 +101,11 @@ class Model
      * @param string $link Link
      * @param int $song_id Id
      */
-    public function updateSong($artist, $track, $link, $song_id)
+    public function updateContact($firstname, $lastname, $contact_id)
     {
-        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :song_id";
+        $sql = "UPDATE contact SET firstname = :firstname, lastname = :lastname WHERE id = :contact_id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':song_id' => $song_id);
+        $parameters = array(':firstname' => $firstname, ':lastname' => $lastname, ':contact_id' => $contact_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . debugPDO($sql, $parameters);  exit();
@@ -117,13 +117,13 @@ class Model
      * Get simple "stats". This is just a simple demo to show
      * how to use more than one model in a controller (see application/controller/songs.php for more)
      */
-    public function getAmountOfSongs()
+    public function getNumberOfContacts()
     {
-        $sql = "SELECT COUNT(id) AS amount_of_songs FROM song";
+        $sql = "SELECT COUNT(id) AS contacts_number FROM contact";
         $query = $this->db->prepare($sql);
         $query->execute();
 
         // fetch() is the PDO method that get exactly one result
-        return $query->fetch()->amount_of_songs;
+        return $query->fetch()->contacts_number;
     }
 }

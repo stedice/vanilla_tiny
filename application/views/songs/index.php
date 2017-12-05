@@ -1,56 +1,48 @@
 <?php if (!$this) { exit(header('HTTP/1.0 403 Forbidden')); } ?>
 
 <div class="container">
-    <h2>You are in the View: application/views/song/index.php (everything in this box comes from that file)</h2>
-    <!-- add song form -->
+    <h2>You are in the View: application/views/contact/index.php (everything in this box comes from that file)</h2>
+    <!-- add contact form -->
     <div>
-        <h3>Add a song</h3>
-        <form action="<?php echo URL_WITH_INDEX_FILE; ?>songs/addsong" method="POST">
-            <label>Artist</label>
-            <input type="text" name="artist" value="" required />
-            <label>Track</label>
-            <input type="text" name="track" value="" required />
-            <label>Link</label>
-            <input type="text" name="link" value="" />
-            <input type="submit" name="submit_add_song" value="Submit" />
+        <h3>Add a contact</h3>
+        <form action="<?php echo URL_WITH_INDEX_FILE; ?>contacts/addcontact" method="POST">
+            <label>FirstName</label>
+            <input type="text" name="firstname" value="" required />
+            <label>LastName</label>
+            <input type="text" name="lastname" value="" required />
+            <input type="submit" name="submit_add_contact" value="Submit" />
         </form>
     </div>
     <!-- main content output -->
     <div>
-        <h3>Amount of songs (data from second model)</h3>
+        <h3>Amount of contacts (data from second model)</h3>
         <div>
-            <?php echo $amount_of_songs; ?>
+            <?php echo $amount_of_contacts; ?>
         </div>
-        <h3>Amount of songs (via AJAX)</h3>
+        <h3>Amount of contacts (via AJAX)</h3>
         <div>
-            <button id="javascript-ajax-button">Click here to get the amount of songs via Ajax (will be displayed in #javascript-ajax-result-box)</button>
+            <button id="javascript-ajax-button">Click here to get the amount of contacts via Ajax (will be displayed in #javascript-ajax-result-box)</button>
             <div id="javascript-ajax-result-box"></div>
         </div>
-        <h3>List of songs (data from first model)</h3>
+        <h3>List of contacts (data from first model)</h3>
         <table>
             <thead style="background-color: #ddd; font-weight: bold;">
             <tr>
                 <td>Id</td>
-                <td>Artist</td>
-                <td>Track</td>
-                <td>Link</td>
+                <td>FirstName</td>
+                <td>LastName</td>
                 <td>DELETE</td>
                 <td>EDIT</td>
             </tr>
             </thead>
             <tbody>
-            <?php foreach ($songs as $song) { ?>
+            <?php foreach ($contacts as $contact) { ?>
                 <tr>
-                    <td><?php if (isset($song->id)) echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($song->artist)) echo htmlspecialchars($song->artist, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($song->track)) echo htmlspecialchars($song->track, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td>
-                        <?php if (isset($song->link)) { ?>
-                            <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
-                        <?php } ?>
-                    </td>
-                    <td><a href="<?php echo URL_WITH_INDEX_FILE . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                    <td><a href="<?php echo URL_WITH_INDEX_FILE . 'songs/editsong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
+                    <td><?php if (isset($contact->id)) echo htmlspecialchars($contact->id, ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td><?php if (isset($contact->firstname)) echo htmlspecialchars($contact->firstname, ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td><?php if (isset($contact->lastname)) echo htmlspecialchars($contact->lastname, ENT_QUOTES, 'UTF-8'); ?></td>
+                    <td><a href="<?php echo URL_WITH_INDEX_FILE . 'contacts/deletecontact/' . htmlspecialchars($contact->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
+                    <td><a href="<?php echo URL_WITH_INDEX_FILE . 'contacts/editcontact/' . htmlspecialchars($contact->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
                 </tr>
             <?php } ?>
             </tbody>
