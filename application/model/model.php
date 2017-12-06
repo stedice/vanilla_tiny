@@ -15,7 +15,7 @@ class Model
     }
 
     /**
-     * Get all songs from database
+     * Get all contacts from database
      */
     public function getAllContacts()
     {
@@ -31,7 +31,7 @@ class Model
     }
 
     /**
-     * Add a song to database
+     * Add a contact to database
      * TODO put this explanation into readme and remove it from here
      * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
@@ -72,7 +72,7 @@ class Model
     }
 
     /**
-     * Get a song from database
+     * Get a contact from database
      */
     public function getContact($contact_id)
     {
@@ -90,7 +90,7 @@ class Model
     }
 
     /**
-     * Update a song in database
+     * Update a contact in database
      * // TODO put this explaination into readme and remove it from here
      * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
@@ -99,7 +99,7 @@ class Model
      * @param string $artist Artist
      * @param string $track Track
      * @param string $link Link
-     * @param int $song_id Id
+     * @param int $contact_id Id
      */
     public function updateContact($firstname, $lastname, $contact_id)
     {
@@ -115,15 +115,15 @@ class Model
 
     /**
      * Get simple "stats". This is just a simple demo to show
-     * how to use more than one model in a controller (see application/controller/songs.php for more)
+     * how to use more than one model in a controller (see application/controller/contacts.php for more)
      */
-    public function getNumberOfContacts()
+    public function getAmountOfContacts()
     {
-        $sql = "SELECT COUNT(id) AS contacts_number FROM contact";
+        $sql = "SELECT COUNT(id) AS contacts_amount FROM contact";
         $query = $this->db->prepare($sql);
         $query->execute();
 
         // fetch() is the PDO method that get exactly one result
-        return $query->fetch()->contacts_number;
+        return $query->fetch()->contacts_amount;
     }
 }
