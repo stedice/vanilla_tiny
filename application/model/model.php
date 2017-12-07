@@ -19,7 +19,8 @@ class Model
      */
     public function getAllContacts()
     {
-        $sql = "SELECT * FROM contact";
+        $sql = "SELECT id, firstname, lastname, tel_work, tel_mobile, email_work, email_private, address, note, favorite
+                FROM contact";
         $query = $this->db->prepare($sql);
         $query->execute();
 

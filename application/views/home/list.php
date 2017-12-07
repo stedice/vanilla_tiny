@@ -1,6 +1,6 @@
 <div id="list">
 	<input type="text" class="search" name="search" placeholder="Search..">
-  <ul>
+  <ul id="contact-list">
   	<li class="list-item"><span class="circle-sm"></span>uno</li>
   	<li class="list-item"><span class="circle-sm"></span>due</li>
   	<li class="list-item"><span class="circle-sm"></span>tre</li>

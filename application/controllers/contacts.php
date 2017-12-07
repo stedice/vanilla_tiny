@@ -27,6 +27,15 @@ class Contacts extends Controller
         require APP . 'views/_templates/footer.php';
     }
 
+    public function allContacts()
+    {
+        // getting all contacts and amount of contacts
+        $contacts = $this->model->getAllContacts();
+
+       // load views. within the views we can echo out $contacts and $amount_of_contacts easily
+        require APP . 'views/contacts/allcontacts.php';
+    }
+
     /**
      * ACTION: addContact
      * This method handles what happens when you move to http://yourproject/contacts/addcontact

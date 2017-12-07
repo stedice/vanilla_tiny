@@ -1,4 +1,4 @@
-<?php if (!$this) { exit(header('HTTP/1.0 403 Forbidden')); } ?>
+<?php if (!$this) { exit(header('HTTP/1.0 403 Forbidden')); } echo json_encode($contacts)?>
 
 <div class="container">
     <h2>You are in the View: application/views/contact/index.php (everything in this box comes from that file)</h2>
