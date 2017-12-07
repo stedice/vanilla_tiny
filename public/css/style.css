@@ -198,7 +198,7 @@ input[type=text].search {
 }
 
 /* detail page style */
-table.details {
+#details-table {
   margin: 20px;
   border-collapse: collapse;
 }
