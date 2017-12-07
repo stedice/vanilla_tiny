@@ -27,7 +27,7 @@
 #details {
     float: left;
     width: 60%;
-    background: white;
+    background: #f5f6f7;
     height: 100%;
     overflow: scroll;
 }
@@ -70,6 +70,12 @@ button:focus {outline:0;}
   background-repeat: no-repeat;
   background-position: center;
   background-size: 40px 40px; 
+}
+
+.favorite-star {
+  display: inline;
+  padding: 0 20px 0 20px;
+  margin-left: 30px;
 }
 
 /* contact list */

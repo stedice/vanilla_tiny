@@ -1,3 +1,5 @@
+let contacts = [];  //global
+
 function ready(fn) {
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
     fn();
@@ -23,11 +25,28 @@ function makeRequest(method, url) {
     xhr.send(null);
   });
 }
+
 function addClass (el, className){
     if (el.classList)
       el.classList.add(className);
     else
       el.className += ' ' + className;
+}
+
+function toggleClass (el, className){
+    if (el.classList) {
+      el.classList.toggle(className);
+    } else {
+      var classes = el.className.split(' ');
+      var existingIndex = classes.indexOf(className);
+
+      if (existingIndex >= 0)
+        classes.splice(existingIndex, 1);
+      else
+        classes.push(className);
+
+      el.className = classes.join(' ');
+    }
 }
 
 function renderList(contacts) {
@@ -45,9 +64,34 @@ function renderList(contacts) {
     contactlist.appendChild(node); 
   });
 }
+
+function renderAllList(){
+    toggleActiveButton();
+    renderList(contacts);
+}
+
+function renderFavList(){
+    toggleActiveButton();
+    const favorites = contacts.filter(c => (c.favorite == true));
+    renderList(favorites);
+}
+
+function toggleActiveButton(){
+    toggleClass(buttonAll, 'active');
+    toggleClass(buttonFav, 'active');
+}
+
 function renderDetails(contact){
     if (!contact) {return;}
     dt_name.innerHTML = contact.firstname + ' ' + contact.lastname;
+        //<div class="icon icon-star2"></div>
+    const node = document.createElement("SPAN");
+    addClass(node, "icon");
+    addClass(node, "icon-star" + (contact.favorite == true ? '3':'2'));
+    addClass(node, "favorite-star");
+    node.onclick = () => toggleFav(contact); 
+    dt_name.appendChild(node);
+
     dt_tel_work.innerHTML = contact.tel_work;
     dt_tel_mobile.innerHTML = contact.tel_mobile;
     dt_email_work.innerHTML = contact.email_work;
@@ -56,11 +100,24 @@ function renderDetails(contact){
     dt_note.innerHTML = contact.note;
 }
 
+function filterList(){
+    let s = searchField.value.toLowerCase();
+    const filtered = contacts.filter(c => (c.firstname.toLowerCase().includes(s) || c.lastname.toLowerCase().includes(s)));
+    renderList(filtered);
+}
+
+function toggleFav(contact){
+    if(!contact){ return; }
+    contact.favorite = !contact.favorite;
+    renderDetails(contact);
+}
+
 function getContacts() {
   makeRequest('GET', './index.php/contacts/allcontacts')
     .then(function(datums) {
-      renderList(JSON.parse(datums));
-      renderDetails();
+      contacts = JSON.parse(datums)
+      renderList(contacts);
+      renderDetails(contacts[0]);
     })
     .catch(function(err) {
       console.error('Augh, there was an error!', err.statusText);

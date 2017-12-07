@@ -31,9 +31,8 @@ class Contacts extends Controller
     {
         // getting all contacts and amount of contacts
         $contacts = $this->model->getAllContacts();
+        echo json_encode($contacts);
 
-       // load views. within the views we can echo out $contacts and $amount_of_contacts easily
-        require APP . 'views/contacts/allcontacts.php';
     }
 
     /**
