@@ -31,7 +31,6 @@ function addClass (el, className){
 }
 
 function renderList(contacts) {
-  console.log(contacts);
   contactlist.innerHTML = '';
   contacts.forEach(function(item, i) {
     // <li class="list-item"><span class="circle-sm"></span>sei</li>
@@ -42,20 +41,26 @@ function renderList(contacts) {
     node.appendChild(photo);
     const textnode = document.createTextNode(item.firstname + ' ' + item.lastname); // Create a text node
     node.appendChild(textnode);
-    contactlist.appendChild(node);   
+    node.onclick = () => renderDetails(item); 
+    contactlist.appendChild(node); 
   });
 }
 function renderDetails(contact){
-    detailstable.innerHTML='';
-
+    if (!contact) {return;}
+    dt_name.innerHTML = contact.firstname + ' ' + contact.lastname;
+    dt_tel_work.innerHTML = contact.tel_work;
+    dt_tel_mobile.innerHTML = contact.tel_mobile;
+    dt_email_work.innerHTML = contact.email_work;
+    dt_email_private.innerHTML = contact.email_private;
+    dt_address.innerHTML = contact.address;
+    dt_note.innerHTML = contact.note;
 }
 
 function getContacts() {
-  renderList([]);
   makeRequest('GET', './index.php/contacts/allcontacts')
     .then(function(datums) {
       renderList(JSON.parse(datums));
-      //renderDetails();
+      renderDetails();
     })
     .catch(function(err) {
       console.error('Augh, there was an error!', err.statusText);

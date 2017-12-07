@@ -1,5 +1,5 @@
 <div id="details">
-    <table id="details-table">
+    <table class="details">
       <tr>
         <th><div class="circle"></div></th>
         <td class="name" id="dt_name">Nome Cognome</td>
